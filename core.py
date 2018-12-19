@@ -4,7 +4,7 @@ import numpy as np
 def triangle_color(vector0, vector1, vector2,
                    vector_uv0, vector_uv1, vector_uv2,
                    img, z_array, textures,
-                   vector3_normal0, vector3_normal1, vector3_normal2, w, h):
+                   vector3_normal0, vector3_normal1, vector3_normal2, h, w):
     if vector0[1] == vector1[1] and vector0[1] == vector2[1]:
         return
     if vector0[1] > vector1[1]:
@@ -64,7 +64,7 @@ def triangle_color(vector0, vector1, vector2,
             intent = vec3_norm_p[0] * light[0] + vec3_norm_p[1] * light[1] + vec3_norm_p[2] * light[2]
 
             if intent > 0:
-                idx = int(vec_p[0] + vec_p[1] * h)
+                idx = int(vec_p[0] + vec_p[1] * w)
                 if vec_p[0] >= w or vec_p[1] >= h or vec_p[0] < 0 or vec_p[1] < 0:
                     j += 1
                     continue
