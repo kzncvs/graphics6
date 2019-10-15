@@ -1,4 +1,3 @@
-Deploying:
 
 `$ sudo apt-get -y update`
 
